@@ -17,7 +17,7 @@
 	//one of four folders: 360, 768, 1200, 1500.
 	
 	for (var a=1; a < 9; a++) { //if looping through 8 images, condition is a < 9;
-		var b =document.getElementById("idName" + a).src;
+		var b = document.getElementById("idName" + a).src;
 		var c = b.replace("size", z);
 		document.getElementById("idName" + a).src = c;
 	}
