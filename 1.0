@@ -1,0 +1,26 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+//A simple image picker to load images for specific screen widths
+
+	function imagePicker () {
+	//Find the user's screen size and create a string variable, z
+	var x = screen.width;
+	var z;
+	if (x <=360) { z = "360";}
+	else if (x >= 361 && x <= 768) {z = "768";}
+	else if (x >= 769 && x <= 1200) {z = "1200";}
+	else {z = "1500";}
+	
+	//Use a loop that finds all images with numerically consecutive ID names. 
+	//(ex: idName1, idName2, etc) and replaces "size" with z within the url.
+	//An example url: /projectFile/images/size/marqueeImage.jpg where "size" is
+	//one of four folders: 360, 768, 1200, 1500.
+	
+	for (var a=1; a < 9; a++) { //if looping through 8 images, condition is a < 9;
+		var b =document.getElementById("idName" + a).src;
+		var c = b.replace("size", z);
+		document.getElementById("idName" + a).src = c;
+	}
+}
+$( document ).ready( imagePicker );
+</script>
